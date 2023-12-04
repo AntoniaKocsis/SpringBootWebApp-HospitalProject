@@ -81,6 +81,11 @@
             color: #007ab3; /* Change the color when the link is hovered over */
         }
 
+        .main a.h4 {
+            font-size: 16px; /* Set the font size for the h4 class */
+            padding: 5px 5px; /* Set padding for the buttons */
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -137,12 +142,12 @@
                 <tbody>
                 <th:block th:each="patient : ${listPatients}">
                     <tr>
-                        <td>[[${patient.id}]]></td>
-                        <td>[[${patient.firstName}]]></td>
-                        <td>[[${patient.lastName}]]></td>
-                        <td>[[${patient.birthDate}]]></td>
-                        <td>[[${patient.contact}]]></td>
-                        <td>[[${patient.address}]]></td>
+                        <td>[[${patient.id}]]</td>
+                        <td>[[${patient.firstName}]]</td>
+                        <td>[[${patient.lastName}]]</td>
+                        <td>[[${patient.birthDate}]]</td>
+                        <td>[[${patient.contact}]]</td>
+                        <td>[[${patient.address}]]</td>
                         <td>
                             <a class="h4 mr-3" th:href="@{'/patients/edit/' + ${patient.id}}">Edit</a>
                             <a class="h4" th:href="@{'/patients/delete/' + ${patient.id}}">Delete</a>
