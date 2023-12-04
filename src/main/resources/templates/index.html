@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to My Application</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #002e4d;
+            overflow-x: hidden;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidenav img {
+            width: 80px; /* Adjust the width of the image */
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .sidenav a {
+            padding: 20px 20px 20px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #e6f7ff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #007ab3;
+        }
+
+        .main {
+            margin-left: 250px;
+            padding-top: 20px;
+            padding-left: 20px; /* Add padding to main content */
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Center items vertically in flex container */
+        }
+
+        .mainTextBox {
+            padding-left: 190px;
+            width: 220px; /* Set width for main text box */
+            font-family: "Times New Roman", sans-serif;
+            font-size: 30px;
+            color: #004d99;
+            margin-right: 200px;
+        }
+
+        nav {
+            background-color: white;
+            overflow: hidden;
+            width: 50%; /* Set width for navigation */
+            padding-left: 240px;
+
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #0066cc;
+            text-align: center;
+            padding: 20px 20px;
+            text-decoration: none;
+            font-size: 16.5px;
+        }
+
+        nav a:hover {
+            background-color: #ccd9ff;
+        }
+
+        .upperBox {
+            margin-left: 240px; /* Same as the width of the sidenav */
+            height: 70px;
+            background-color: #000000;
+        }
+
+        .lowerBox {
+            margin-left: 240px; /* Same as the width of the sidenav */
+            height: 150px;
+            background-color: #006699;
+            font-family: "Times New Roman", sans-serif;
+            font-size: 30px;
+        }
+
+        .contactDetailsBox {
+            margin-left: 250px; /* Same as the width of the sidenav */
+            /*border: 2px solid black;*/
+            /*outline: #809fff solid 3px;*/
+            height: 30px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 16px;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .mySlides {
+            position: relative;
+            display: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+
+        .slideshow-container {
+            max-width: 1600px;
+            position: relative;
+            margin-left: 250px; /* Same as the width of the sidenav */
+        }
+
+        .mySlides img {
+            width: 100%; /* Set the width to 100% for responsiveness */
+            height: 600px; /* Set a fixed height for uniformity */
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+
+        /* Boxes */
+        .box {
+            position: absolute;
+            background-color: rgba(102, 102, 255, 0.9); /* Adjust the opacity as needed */
+            width: 25%; /* Adjust the box width */
+            height: 250px; /* Adjust the box height */
+            top: 55%; /* Adjust the box position from the top */
+            left: 10%; /* Adjust the box position from the left */
+            padding: 10px 20px;
+            text-align: left;
+            font-family: Arial, sans-serif;
+            font-size: 16.5px; /* Adjust the font size */
+            color: white; /* Set text color to white */
+        }
+
+        .box h5, .box2 h5, .box3 h5 {
+            font-size: 20px; /* Adjust the font size for the main paragraph */
+            margin-bottom: 10px; /* Adjust the margin between paragraphs */
+        }
+
+
+        .box2 {
+            position: absolute;
+            background-color: rgba(0, 61, 102, 0.9); /* Adjust the opacity as needed */
+            width: 25%; /* Adjust the box width */
+            height: 250px; /* Adjust the box height */
+            top: 55%; /* Adjust the box position from the top */
+            left: 37%; /* Adjust the box position from the left */
+            padding: 10px 20px;
+            text-align: left;
+            font-family: Arial, sans-serif;
+            font-size: 16.5px; /* Adjust the font size */
+            color: white; /* Set text color to white */
+        }
+
+        .box3 {
+            position: absolute;
+            background-color: rgba(0, 153, 153, 0.9); /* Adjust the opacity as needed */
+            width: 25%; /* Adjust the box width */
+            height: 250px; /* Adjust the box height */
+            top: 55%; /* Adjust the box position from the top */
+            left: 64%; /* Adjust the box position from the left */
+            padding: 10px 20px;
+            text-align: left;
+            font-family: Arial, sans-serif;
+            font-size: 16.5px; /* Adjust the font size */
+            color: white; /* Set text color to white */
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 3.0s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+        .button {
+            background-color: #04AA6D; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .button4 {
+            background-color: #0088cc;
+            color: black;
+            border: 2px solid #0088cc;
+        }
+
+        .button4:hover {background-color: #33bbff;}
+    </style>
+</head>
+<body>
+<div class="sidenav">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU"
+         alt="Profile Image">
+    <a th:href="@{/patients}">Patients</a>
+    <a th:href="@{/doctors}">Doctors</a>
+    <a th:href="@{/appointments}">Appointments</a>
+    <a th:href="@{/admissions}">Admissions</a>
+    <a th:href="@{/users}">Hospital Rooms</a>
+    <a th:href="@{/prescriptions}">Prescriptions</a>
+    <a th:href="@{/medications}">Medications</a>
+    <!-- Add additional sidebar links as needed -->
+</div>
+<div class="upperBox"></div>
+<div class="contactDetailsBox">
+    <i class="fa fa-map-marker" style="font-size:16.5px;color:#004d99;padding-top:25px;padding-left: 200px">4800 Sand
+        Point Way NE Seattle, WA 98105</i>
+    <i class="fa fa-phone" style="font-size:16.5px;color:#004d99;padding-top:10px;padding-left: 390px"> Tel:
+        123-456-7890</i>
+</div>
+<div class="main">
+    <div class="mainTextBox" style="padding-right: 10px"><p style="color:#004d99">Seattle~Grace Hospital</p></div>
+    <nav style="padding-top:30px;padding-left: 10px;padding-bottom: 30px">
+        <a href="#">DEPARTMENTS</a>
+        <a href="#">DOCTORS</a>
+        <a href="#">PATIENTS</a>
+        <a href="#">ANNOUNCEMENTS</a>
+    </nav>
+</div>
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="https://www.rcsiucd.edu.my/wp-content/uploads/2022/12/84764-scaled.jpg" style="width:100%">
+        <div class="box">
+            <h5> Departments </h5>
+            <p>Explore our various departments and the services they offer to ensure your health is well taken care
+                of.</p>
+        </div>
+        <div class="box2">
+            <h5> Doctors </h5>
+            <p>Meet our team of experienced and knowledgeable doctors who are dedicated to providing quality care to our
+                patients.</p>
+        </div>
+        <div class="box3">
+            <h5> Facilities </h5>
+            <p>We provide state-of-the-art medical facilities equipped with the latest medical devices and technology to
+                ensure the best treatment for our patients.</p>
+        </div>
+
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="https://betterhealthwhileaging.net/wp-content/uploads/2015/07/bigstock-Doctor-Discussing-Records-With-41853415.jpg"
+             style="width:100%">
+        <div class="box">
+            <h5> Departments </h5>
+            <p>Explore our various departments and the services they offer to ensure your health is well taken care
+                of.</p>
+        </div>
+        <div class="box2">
+            <h5> Doctors </h5>
+            <p>Meet our team of experienced and knowledgeable doctors who are dedicated to providing quality care to our
+                patients.</p>
+        </div>
+        <div class="box3">
+            <h5> Facilities </h5>
+            <p>We provide state-of-the-art medical facilities equipped with the latest medical devices and technology to
+                ensure the best treatment for our patients.</p>
+        </div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="https://cdn.castleconnolly.com/dims4/default/7a3d393/2147483647/strip/true/crop/1200x675+0+0/resize/840x472!/quality/90/?url=http%3A%2F%2Fcastle-connolly-brightspot.s3.us-east-1.amazonaws.com%2Ffc%2F15%2Fde62e4dc410c815da398197715f0%2Fpillar-diagnostic-radiology-46-1200x675.jpg"
+             style="width:100%">
+        <div class="box">
+            <h5> Departments </h5>
+            <p>Explore our various departments and the services they offer to ensure your health is well taken care
+                of.</p>
+        </div>
+        <div class="box2">
+            <h5> Doctors </h5>
+            <p>Meet our team of experienced and knowledgeable doctors who are dedicated to providing quality care to our
+                patients.</p>
+        </div>
+        <div class="box3">
+            <h5> Facilities </h5>
+            <p>We provide state-of-the-art medical facilities equipped with the latest medical devices and technology to
+                ensure the best treatment for our patients.</p>
+        </div>
+    </div>
+
+</div>
+<!-- Remove the dot elements from your HTML -->
+<!-- Keep only the container div -->
+
+<div style="text-align:center">
+    <!--
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    -->
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 7000); // Change image every 7 seconds
+
+    }
+</script>
+<div class="lowerBox" style="padding-top: 40px;color:white;padding-left: 140px">Book an Appointment
+    <button class="button button4" style="padding-top: 20px;color:white;margin-left: 460px;font-family:Times New Roman, sans-serif;font-size: 20px">Schedule now</button>
+</div>
+
+<div class="w3-row-padding" style="margin-left: 270px; margin-top: 30px">
+    <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1330046035/ro/fotografie/portretul-cu-capul-al-medicului-z%C3%A2mbitor-din-spital.jpg?s=612x612&w=0&k=20&c=CFCgAtIyYyXMTh10kLOv7cba5Ow7MSnFoXVHc0k2GV8=" alt="Alps" style="width:100%">
+            <div class="w3-container w3-center">
+                <p>The Italian / Austrian Alps</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1311511363/ro/fotografie/portretul-cu-capul-al-medicului-de-sex-masculin-z%C3%A2mbitor-cu-tablet%C4%83.jpg?s=612x612&w=0&k=20&c=vEO6A3uc7jjgPwvAKpAMI350mUzu3NkqxMQCIvHBVNI=" alt="Alps" style="width:100%">
+            <div class="w3-container w3-center">
+                <p>The Italian / Austrian Alps</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1329569957/ro/fotografie/fericit%C4%83-t%C3%A2n%C4%83r%C4%83-doctor-de-sex-feminin-uita-la-aparatul-de-fotografiat.jpg?s=612x612&w=0&k=20&c=3ikYI9DmLkJbhbpgvUsAqHacc_GKRl34r0gGIJYh6DI=" alt="Alps" style="width:100%">
+            <div class="w3-container w3-center">
+                <p>The Italian / Austrian Alps</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1308951063/ro/fotografie/portretul-cu-capul-al-medicului-masculin-caucazian-matur-%C3%AEn-uniform%C4%83.jpg?s=612x612&w=0&k=20&c=uaB1KMZR9iM_eTbiMRnQBde76B_X4GcV_rib6Ht8lOM=" alt="Alps" style="width:100%">
+            <div class="w3-container w3-center">
+                <p>The Italian / Austrian Alps</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1368636260/ro/fotografie/cap-%C3%AEmpu%C8%99cat-vis%C4%83tor-z%C3%A2mbitor-indian-medic-de-sex-feminin-caut%C4%83-%C3%AEn-distan%C8%9B%C4%83.jpg?s=612x612&w=0&k=20&c=B_PVFDSCb2AYw2USIVzCTGYnw3lZ_IfO9b5PWIVZpUg=" alt="Alps" style="width:100%">
+            <div class="w3-container w3-center">
+                <p>The Italian / Austrian Alps</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-col s12 m6 l4" style="margin-bottom: 20px;">
+        <div class="w3-card-4" style="width:80%">
+            <img src="https://media.istockphoto.com/id/1583407515/ro/fotografie/fericit%C4%83-pozitiv%C4%83-femeie-matur%C4%83-%C3%AEn-uniform%C4%83-alb%C4%83-%C3%AEmpu%C8%99cat%C4%83-%C3%AEn-cap.jpg?s=612x612&w=0&k=20&c=UiOADqsGsXlABgLUyIhzcu1YV6wYap21foQ82Ynn-90=" alt="Alps" style="width:100%">
+            <div class="w3-container w3-center">
+                <p>The Italian / Austrian Alps</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

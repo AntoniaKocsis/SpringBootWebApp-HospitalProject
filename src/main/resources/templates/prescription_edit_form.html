@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${pageTitle}]]</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"  />
+</head>
+<body>
+<div class="container-fluid">
+    <div class="text-center"><h2>[[${pageTitle}]]</h2></div>
+
+    <form th:action="@{/prescriptions/save}" method="post" th:object="${prescription}"
+          style="max-width: 500px; margin: 0 auto;">
+        <input type="hidden" th:field="*{id}">
+        <input type="hidden" th:field="*{patient}" th:value="${prescription.patient.id}">
+        <input type="hidden" th:field="*{doctor}" th:value="${prescription.doctor.id}">
+
+        <div class="border border-secondary rounded p-3">
+            <!-- Display current patient and doctor information -->
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Patient:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" th:value="${prescription.patient.firstName + ' ' + prescription.patient.lastName}" readonly/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Doctor:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" th:value="${prescription.doctor.firstName + ' ' + prescription.doctor.lastName}" readonly/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Date:</label>
+                <div class="col-sm-8">
+                    <input type="datetime-local" th:field="*{date}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Medications:</label>
+                <div class="col-sm-8">
+                    <select multiple="multiple" th:field="*{medications}" class="form-control" required>
+                        <th:block th:each="med:${medicationsList}">
+                            <option th:text="${med.name + ' ' + med.concentration}" th:value="${med.id}"></option>
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary m-2">Save</button>
+                <button type="button" class="btn btn-secondary m-2" onclick="cancelForm()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    function cancelForm() {
+        window.location = "[[@{/prescriptions}]]";
+    }
+</script>
+</body>
+</html>
