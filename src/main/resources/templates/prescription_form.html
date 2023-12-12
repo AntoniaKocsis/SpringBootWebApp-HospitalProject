@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add New Perscription</title>
+    <title>Add New Prescription</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"  />
     <style>
         body {
@@ -111,9 +111,9 @@
 <body>
 <div class="sidenav">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
-    <a class="h4" th:href="@{index/}">Home Page</a>
-    <a class="h4" th:href="@{/patients}">Manage Perscriptions</a>
-    <a class="h4" th:href="@{/patients/new}">Add New Perscription</a>
+    <a class="h4" th:href="@{index}">Home Page</a>
+    <a class="h4" th:href="@{/prescriptions}">Manage Perscriptions</a>
+    <a class="h4" th:href="@{/prescriptions/new}">Add New Perscription</a>
 
 </div>
 <div class="upperBox"></div>
@@ -176,7 +176,7 @@
 
 <script type="text/javascript">
     function cancelForm() {
-        window.location = "[[@{/appointments}]]";
+        window.location = "[[@{/prescriptions}]]";
     }
 </script>
 </body>

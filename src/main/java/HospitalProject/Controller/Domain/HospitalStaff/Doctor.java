@@ -1,6 +1,6 @@
 package HospitalProject.Controller.Domain.HospitalStaff;
 
-import HospitalProject.Controller.Domain.HospitalConfiguration.Department;
+import HospitalProject.Controller.Domain.HospitalConfiguration.Department.Department;
 import HospitalProject.Controller.Domain.HospitalServices.Admissions.Admission;
 import HospitalProject.Controller.Domain.HospitalServices.Appointments.Appointment;
 import HospitalProject.Controller.Domain.HospitalServices.Prescriptions.Prescription;
@@ -42,7 +42,6 @@ public class Doctor {
     @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Prescription> prescriptions;
 
-
     public Doctor() {
         departments = new ArrayList<>();
         appointments = new ArrayList<>();
@@ -59,10 +58,13 @@ public class Doctor {
         departments = new ArrayList<>();
         onCall = false;
     }
+    public List<Department> getDepartments() {
+        return departments;
+    }
+
     public void setDepartments(List<Department> departments) {
         this.departments = departments;
     }
-
     public List<Appointment> getAppointments() {
         return appointments;
     }
@@ -156,21 +158,6 @@ public class Doctor {
         this.birthDate = birthDate;
     }
 
-    public List<Department> getDepartments() {
-        return departments;
-    }
-
-    public void setDepartments(ArrayList<Department> departments) {
-        this.departments = departments;
-    }
-
-    public void enrollInDepartment(Department department) {
-        departments.add(department);
-    }
-
-    public boolean removeDepartment(Department department) {
-        return departments.remove(department);
-    }
 
     public boolean isOnCall() {
         return onCall;

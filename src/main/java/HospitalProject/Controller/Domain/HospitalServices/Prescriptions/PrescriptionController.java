@@ -1,8 +1,6 @@
 package HospitalProject.Controller.Domain.HospitalServices.Prescriptions;
 import HospitalProject.Controller.Domain.Beneficiaries.Patient;
 import HospitalProject.Controller.Domain.Beneficiaries.PatientService;
-import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.HospitalRoom;
-import HospitalProject.Controller.Domain.HospitalServices.Appointments.Appointment;
 import HospitalProject.Controller.Domain.HospitalServices.Medications.Medication;
 import HospitalProject.Controller.Domain.HospitalServices.Medications.MedicationService;
 import HospitalProject.Controller.Domain.HospitalStaff.Doctor;

@@ -1,14 +1,10 @@
 package HospitalProject.Controller.Domain.HospitalServices.Appointments;
 
 import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientNotFoundException;
 import HospitalProject.Controller.Domain.Beneficiaries.PatientService;
-import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.ExaminationRoom;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.HospitalRoom;
-import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.HospitalRoomNotFoundException;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.HospitalRoomService;
 import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
-import HospitalProject.Controller.Domain.HospitalStaff.DoctorNotFoundException;
 import HospitalProject.Controller.Domain.HospitalStaff.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

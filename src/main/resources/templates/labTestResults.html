@@ -48,7 +48,7 @@
 
         .backgroundBox {
             height: 250px; /* Set the height of the title box */
-            background-image: url('https://wallpapercave.com/wp/wp2386798.jpg');
+            background-image: url('https://www.pixelstalk.net/wp-content/uploads/images1/Download-now-Medical-HD-Wallpaper-1080p.jpg');
             background-size: cover; /* Cover the entire box with the background image */
             background-position: center; /* Center the background image */
             color: #111111; /* Set the text color */
@@ -65,7 +65,7 @@
         }
 
         .main h2 {
-            width: 30%; /* Set width for main text box */
+            width: 40%; /* Set width for main text box */
             font-family: "Times New Roman", sans-serif;
             font-size: 30px;
             color: #004d99;
@@ -100,21 +100,23 @@
     </style>
 
     <meta charset="UTF-8">
+    <title>Manage labTestResults</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
 </head>
-<title>Manage Patients</title>
 <body>
 <div class="sidenav">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
     <a class="h4" th:href="@{/}">Home Page</a>
-    <a class="h4" th:href="@{/patients}">Manage Patients</a>
-    <a class="h4" th:href="@{/patients/new}">Add New Patient</a>
+    <a class="h4" th:href="@{/labTestResults}">Manage Lab Test Results</a>
+    <a class="h4" th:href="@{/labTestResults/new}">Add New Lab Test Result</a>
+
 </div>
 <div class="upperBox"></div>
 <div class="backgroundBox"></div>
 <div class="main">
     <div class="container-fluid text-center">
-        <div><h2>Manage Patients</h2></div>
+        <div><h2>Manage labTestResults</h2></div>
+
         <!--
         <div th:if="${message}" class="alert alert-success text-center">
              [[${message}]]
@@ -126,26 +128,23 @@
                 <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Birth Date</th>
-                    <th>Contact</th>
-                    <th>Address</th>
+                    <th>Test Name</th>
+                    <th>Patient ID</th>
+                    <th>Date</th>
+                    <th>Result</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <th:block th:each="patient : ${listPatients}">
+                <th:block th:each="labTestResult : ${listLabTestResults}">
                     <tr>
-                        <td>[[${patient.id}]]</td>
-                        <td>[[${patient.firstName}]]</td>
-                        <td>[[${patient.lastName}]]</td>
-                        <td>[[${patient.birthDate}]]</td>
-                        <td>[[${patient.contact}]]</td>
-                        <td>[[${patient.address}]]</td>
+                        <td>[[${labTestResult.id}]]</td>
+                        <td>[[${labTestResult.testName}]]</td>
+                        <td>[[${labTestResult.patient.id}]]</td>
+                        <td>[[${labTestResult.date}]]</td>
+                        <td>[[${labTestResult.result}]]</td>
                         <td>
-                            <a class="h4 mr-3" th:href="@{'/patients/edit/' + ${patient.id}}">Edit</a>
-                            <a class="h4" th:href="@{'/patients/delete/' + ${patient.id}}">Delete</a>
+                            <a class="h4" th:href="@{'/labTestResults/delete/' + ${labTestResult.id}}">Delete</a>
                         </td>
                     </tr>
                 </th:block>

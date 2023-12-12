@@ -9,13 +9,20 @@ import javax.persistence.*;
 public class HospitalRoom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
+
+    @Column(length = 45, nullable = false, name = "available")
+    private boolean available;
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
 
     private int roomNumber;
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public HospitalRoom() {
         // Default constructor for JPA
@@ -25,8 +32,12 @@ public class HospitalRoom {
         this.roomNumber = roomNumber;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public int getRoomNumber() {

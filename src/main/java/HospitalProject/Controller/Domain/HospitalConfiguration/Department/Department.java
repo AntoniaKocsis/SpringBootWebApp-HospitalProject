@@ -1,6 +1,7 @@
-package HospitalProject.Controller.Domain.HospitalConfiguration;
+package HospitalProject.Controller.Domain.HospitalConfiguration.Department;
 
 import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
+
 import javax.persistence.*;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.List;
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @Column(length = 45, nullable = false, name = "department_name")
     private String name;
 
@@ -23,12 +24,21 @@ public class Department {
     )
     private List<Doctor> doctors;
 
-    public Department(){
+    public Department() {
         doctors = new ArrayList<>();
     }
+
     public Department(String name) {
         this.name = name;
         doctors = new ArrayList<>();
+    }
+
+    public List<Doctor> getDoctors() {
+        return doctors;
+    }
+
+    public void setDoctors(List<Doctor> doctors) {
+        this.doctors = doctors;
     }
 
     @Override
@@ -39,9 +49,6 @@ public class Department {
                 '}';
     }
 
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -51,19 +58,11 @@ public class Department {
         this.name = name;
     }
 
-    public void enrollDoctor(Doctor doctor) {
-        doctors.add(doctor);
+    public Integer getId() {
+        return id;
     }
 
-    public ArrayList<Doctor> getDoctors() {
-        return(ArrayList<Doctor>) doctors;
-    }
-
-    public void setDoctors(ArrayList<Doctor> doctors) {
-        this.doctors = doctors;
-    }
-
-    public boolean removeDoctor(Doctor doctor) {
-        return doctors.remove(doctor);
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

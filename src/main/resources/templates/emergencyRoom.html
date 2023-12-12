@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Emergency Room</title>
     <style>
         body {
             font-family: "Lato", sans-serif;
@@ -107,14 +108,20 @@
 <div class="sidenav">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
     <a class="h4" th:href="@{/}">Home Page</a>
-    <a class="h4" th:href="@{/patients}">Manage Patients</a>
-    <a class="h4" th:href="@{/patients/new}">Add New Patient</a>
+    <a class="h4" th:href="@{/emergencyRoom}">Emergency Room</a>
+    <a class="h4" th:href="@{/emergencyRoom/new}">Add New Patient</a>
+    <a class="h4" th:href="@{/emergencyRoom_doctors}">On Call Doctors</a>
+
 </div>
 <div class="upperBox"></div>
 <div class="backgroundBox"></div>
 <div class="main">
     <div class="container-fluid text-center">
-        <div><h2>Manage Patients</h2></div>
+        <div>
+            <h2>Manage Patients</h2>
+            <a class="btn btn-primary" th:href="@{/emergencyRoom/handleNextPatient}">Handle Next Patient</a>
+
+        </div>
         <!--
         <div th:if="${message}" class="alert alert-success text-center">
              [[${message}]]
@@ -131,21 +138,23 @@
                     <th>Birth Date</th>
                     <th>Contact</th>
                     <th>Address</th>
+                    <th>Condition</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <th:block th:each="patient : ${listPatients}">
+                <th:block th:each="instance : ${waitingList}">
                     <tr>
-                        <td>[[${patient.id}]]</td>
-                        <td>[[${patient.firstName}]]</td>
-                        <td>[[${patient.lastName}]]</td>
-                        <td>[[${patient.birthDate}]]</td>
-                        <td>[[${patient.contact}]]</td>
-                        <td>[[${patient.address}]]</td>
+                        <td>[[${instance.key.id}]]</td>
+                        <td>[[${instance.key.firstName}]]</td>
+                        <td>[[${instance.key.lastName}]]</td>
+                        <td>[[${instance.key.birthDate}]]</td>
+                        <td>[[${instance.key.contact}]]</td>
+                        <td>[[${instance.key.address}]]</td>
+                        <td>[[${instance.value}]]</td>
                         <td>
-                            <a class="h4 mr-3" th:href="@{'/patients/edit/' + ${patient.id}}">Edit</a>
-                            <a class="h4" th:href="@{'/patients/delete/' + ${patient.id}}">Delete</a>
+                            <a class="h4 mr-3" th:href="@{'/emergencyRoom/edit/' + ${instance.key.id}}">Edit</a>
+                            <a class="h4" th:href="@{'/emergencyRoom/delete/' + ${instance.key.id}}">Delete</a>
                         </td>
                     </tr>
                 </th:block>

@@ -3,6 +3,7 @@ package HospitalProject.Controller.Domain.HospitalStaff;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +13,26 @@ public class DoctorService {
     public List<Doctor> listAll() {
         return (List<Doctor>) doctorRepository.findAll();
     }
+
+    public List<Doctor>listOnCall(){
+        List<Doctor> doctors = new ArrayList<>();
+        for(Doctor doctor:doctorRepository.findAll()){
+            if(doctor.isOnCall()){
+                doctors.add(doctor);
+            }
+        }
+        return doctors;
+    }
+    public List<Doctor>listOffCall(){
+        List<Doctor> doctors = new ArrayList<>();
+        for(Doctor doctor:doctorRepository.findAll()){
+            if(!doctor.isOnCall()){
+                doctors.add(doctor);
+            }
+        }
+        return doctors;
+    }
+
 
     public void save(Doctor doctor) {
         doctorRepository.save(doctor);

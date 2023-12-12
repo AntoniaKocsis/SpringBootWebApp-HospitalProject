@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <title>On Call Doctors</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
     <style>
         body {
             font-family: "Lato", sans-serif;
@@ -48,7 +51,7 @@
 
         .backgroundBox {
             height: 250px; /* Set the height of the title box */
-            background-image: url('https://wallpapercave.com/wp/wp2386798.jpg');
+            background-image: url('https://images2.alphacoders.com/133/1330529.png');
             background-size: cover; /* Cover the entire box with the background image */
             background-position: center; /* Center the background image */
             color: #111111; /* Set the text color */
@@ -71,6 +74,7 @@
             color: #004d99;
             margin-right: 10%;
         }
+
         .main a {
             color: #00008B; /* Set the default color for the links */
             text-decoration: none; /* Remove underline */
@@ -97,29 +101,23 @@
             background-color: #002e4d;
             color: #fff;
         }
-    </style>
 
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    </style>
 </head>
-<title>Manage Patients</title>
 <body>
 <div class="sidenav">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
     <a class="h4" th:href="@{/}">Home Page</a>
-    <a class="h4" th:href="@{/patients}">Manage Patients</a>
-    <a class="h4" th:href="@{/patients/new}">Add New Patient</a>
+    <a class="h4" th:href="@{/emergencyRoom}">Emergency Room</a>
+    <a class="h4" th:href="@{/emergencyRoom_doctors}">On Call Doctors</a>
+    <a class="h4" th:href="@{/emergencyRoom_doctors/new}">Add New Doctor</a>
+
 </div>
 <div class="upperBox"></div>
 <div class="backgroundBox"></div>
 <div class="main">
     <div class="container-fluid text-center">
-        <div><h2>Manage Patients</h2></div>
-        <!--
-        <div th:if="${message}" class="alert alert-success text-center">
-             [[${message}]]
-         </div>
-         -->
+        <div><h2>On Call Doctors</h2></div>
 
         <div>
             <table class="table table-bordered">
@@ -131,28 +129,27 @@
                     <th>Birth Date</th>
                     <th>Contact</th>
                     <th>Address</th>
+                    <th>On Call</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <th:block th:each="patient : ${listPatients}">
+                <th:block th:each="doctor : ${listDoctors}">
                     <tr>
-                        <td>[[${patient.id}]]</td>
-                        <td>[[${patient.firstName}]]</td>
-                        <td>[[${patient.lastName}]]</td>
-                        <td>[[${patient.birthDate}]]</td>
-                        <td>[[${patient.contact}]]</td>
-                        <td>[[${patient.address}]]</td>
+                        <td>[[${doctor.id}]]</td>
+                        <td>[[${doctor.firstName}]]</td>
+                        <td>[[${doctor.lastName}]]</td>
+                        <td>[[${doctor.birthDate}]]</td>
+                        <td>[[${doctor.contact}]]</td>
+                        <td>[[${doctor.address}]]</td>
+                        <td>[[${doctor.onCall}]]</td>
                         <td>
-                            <a class="h4 mr-3" th:href="@{'/patients/edit/' + ${patient.id}}">Edit</a>
-                            <a class="h4" th:href="@{'/patients/delete/' + ${patient.id}}">Delete</a>
+                            <a class="h4" th:href="@{'/emergencyRoom_doctors/delete/' + ${doctor.id}}">Set Off Call</a>
                         </td>
                     </tr>
                 </th:block>
-
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
