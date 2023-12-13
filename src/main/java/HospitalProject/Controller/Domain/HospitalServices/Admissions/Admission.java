@@ -3,6 +3,8 @@ package HospitalProject.Controller.Domain.HospitalServices.Admissions;
 import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.AdmissionRoom;
 import HospitalProject.Controller.Domain.Beneficiaries.Patient;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -16,7 +18,9 @@ public class Admission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime enrollmentDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime dischargingDate;
 
 

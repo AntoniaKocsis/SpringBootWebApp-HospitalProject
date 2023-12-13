@@ -2,28 +2,30 @@ package HospitalProject.Controller.Domain.Singleton;
 
 import HospitalProject.Controller.Domain.Beneficiaries.Patient;
 import HospitalProject.Controller.Domain.PatientState.PatientCondition;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class PatientInfo{
     private Patient patient;
     private PatientCondition patientCondition;
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    private LocalDateTime date;
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    private Date date;
-    public PatientInfo(Patient patient, PatientCondition condition,Date date) {
+    public PatientInfo(Patient patient, PatientCondition condition,LocalDateTime date) {
         this.patient = patient;
         this.patientCondition = condition;
         this.date = date;
     }
 
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 
     public Patient getPatient() {
         return patient;

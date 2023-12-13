@@ -1,4 +1,5 @@
 package HospitalProject.Controller.Domain.HospitalServices.Prescriptions;
+import HospitalProject.Controller.Domain.HospitalServices.Medications.Medication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,12 @@ public class PrescriptionService {
     }
 
     public void save(Prescription prescription) {
+        List<Medication> medications = prescription.getMedications();
+        for(Medication medication: medications) {
+            List<Prescription> prescriptions = medication.getPrescriptions();
+            prescriptions.add(prescription);
+            medication.setPrescriptions(prescriptions);
+        }
         prescriptionRepository.save(prescription);
     }
 

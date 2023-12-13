@@ -37,7 +37,7 @@ public class AdmissionController {
     @GetMapping("/admissions/new")
     public String showNewForm(Model model) {
         List<Doctor> doctors = doctorService.listAll();
-        List<HospitalRoom> rooms = hospitalRoomService.listAllExaminationRooms();
+        List<HospitalRoom> rooms = hospitalRoomService.listAvailableAdmissionRooms();
         List<Patient> patients = patientService.listAll();
         model.addAttribute("admission", new Admission());
         model.addAttribute("patients", patients);

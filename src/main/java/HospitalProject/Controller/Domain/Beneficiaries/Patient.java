@@ -2,6 +2,7 @@ package HospitalProject.Controller.Domain.Beneficiaries;
 
 import HospitalProject.Controller.Domain.HospitalServices.Admissions.Admission;
 import HospitalProject.Controller.Domain.HospitalServices.Appointments.Appointment;
+import HospitalProject.Controller.Domain.HospitalServices.LabTestResult.LabTestResult;
 import HospitalProject.Controller.Domain.HospitalServices.Prescriptions.Prescription;
 import HospitalProject.Controller.Domain.Observer.PatientNotificationSystem;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -37,11 +38,16 @@ public class Patient {
     @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Prescription> prescriptions;
 
+    @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<LabTestResult> labTestResults;
+
 
     public Patient() {
         appointments = new ArrayList<>();
         admissions = new ArrayList<>();
+        prescriptions = new ArrayList<>();
         patientNotificationSystems = new ArrayList<>();
+        labTestResults = new ArrayList<>();
     }
 
     public Patient(String contact, String address, String firstName, String lastName, LocalDateTime birthDate) {
@@ -137,6 +143,14 @@ public class Patient {
 
     public void setBirthDate(LocalDateTime birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public List<LabTestResult> getLabTestResults() {
+        return labTestResults;
+    }
+
+    public void setLabTestResults(List<LabTestResult> labTestResults) {
+        this.labTestResults = labTestResults;
     }
 
     @Override

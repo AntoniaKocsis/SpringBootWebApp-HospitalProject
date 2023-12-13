@@ -9,13 +9,10 @@ import java.util.List;
 @Entity
 @DiscriminatorValue("Examination")
 public class ExaminationRoom extends HospitalRoom {
-    @Column(length = 45, nullable = false, name = "available")
-    private boolean available;
 
     // Appointment - ExaminationRoom Relationship
     @OneToMany(mappedBy = "examinationRoom", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Appointment> appointments;
-
 
     public ExaminationRoom() {appointments = new ArrayList<>();}
     public ExaminationRoom(int number) {
