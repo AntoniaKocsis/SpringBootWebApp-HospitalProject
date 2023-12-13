@@ -142,7 +142,6 @@
                         <td th:text="${hospitalRoom.getClass().getSimpleName()}"></td>
                         <td>[[${hospitalRoom.available}]]</td>
                         <td>
-                            <a class="h4 mr-3" th:href="@{'/hospitalRooms/edit/' + ${hospitalRoom.id}}">Edit</a>
                             <a class="h4" th:href="@{'/hospitalRooms/delete/' + ${hospitalRoom.id}}">Delete</a>
                         </td>
                     </tr>

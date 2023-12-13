@@ -48,21 +48,6 @@ public class HospitalRoomController {
         ra.addFlashAttribute("message", "The hospitalRoom has been saved successfully.");
         return "redirect:/hospitalRooms";
     }
-
-    @GetMapping("/HospitalRooms/edit/{id}")
-    public String showEditForm(@PathVariable("id") Integer id, Model model, RedirectAttributes ra) {
-        try {
-            HospitalRoom HospitalRoom = service.get(id);
-            model.addAttribute("hospitalRoom", HospitalRoom);
-            model.addAttribute("pageTitle", "Edit HospitalRoom (ID: " + id + ")");
-
-            return "hospitalRoom_form";
-        } catch (HospitalRoomNotFoundException e) {
-            ra.addFlashAttribute("message", e.getMessage());
-            return "redirect:/hospitalRooms";
-        }
-    }
-
     @GetMapping("/hospitalRooms/delete/{id}")
     public String deleteHospitalRoom(@PathVariable("id") Integer id, RedirectAttributes ra) {
         try {
