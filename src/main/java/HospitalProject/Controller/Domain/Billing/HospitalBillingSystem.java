@@ -1,14 +1,5 @@
 package HospitalProject.Controller.Domain.Billing;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.HospitalServices.Appointments.Appointment;
-import HospitalProject.Controller.Domain.HospitalServices.LabTestResult.LabTestResult;
-import HospitalProject.Controller.Domain.Singleton.EmergencyRoom;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 public class HospitalBillingSystem {
     private static HospitalBillingSystem instance;
 

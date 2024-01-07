@@ -1,6 +1,6 @@
 package HospitalProject.Controller.Domain.HospitalConfiguration.Department;
 
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

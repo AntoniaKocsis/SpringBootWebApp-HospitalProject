@@ -1,4 +1,4 @@
-package HospitalProject.Controller.Domain.Interfaces;
+package HospitalProject.Controller.Domain.Interfaces.ObserverPattern;
 
 import HospitalProject.Controller.Domain.HospitalServices.Appointments.Appointment;
 

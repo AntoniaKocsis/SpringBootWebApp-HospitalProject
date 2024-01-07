@@ -1,8 +1,7 @@
 package HospitalProject.Controller.Domain.HospitalServices.Appointments;
 
-import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.HospitalRoom;
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
+import HospitalProject.Controller.Domain.Patient.Patient;
 import HospitalProject.Controller.Domain.Observer.DoctorDashboard;
 import HospitalProject.Controller.Domain.Observer.Observer;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.ExaminationRoom;
@@ -23,14 +22,6 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     // Appointment - Patient Relationship
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
@@ -63,13 +54,6 @@ public class Appointment {
     public Appointment() {
         observers = new ArrayList<>();
     }
-    public ExaminationRoom getExaminationRoom() {
-        return examinationRoom;
-    }
-
-    public void setExaminationRoom(ExaminationRoom examinationRoom) {
-        this.examinationRoom = examinationRoom;
-    }
 
     public Appointment(Patient patient, Doctor doctor, LocalDateTime date, ExaminationRoom room) {
         this.patient = patient;
@@ -85,9 +69,24 @@ public class Appointment {
 
     }
 
+
+
     /**             Getter - setter - toString           **/
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public ExaminationRoom getExaminationRoom() {
+        return examinationRoom;
+    }
+
+    public void setExaminationRoom(ExaminationRoom examinationRoom) {
+        this.examinationRoom = examinationRoom;
+    }
     public Patient getPatient() {
         return patient;
     }

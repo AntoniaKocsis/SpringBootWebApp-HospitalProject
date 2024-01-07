@@ -1,4 +1,4 @@
-package HospitalProject.Controller.Domain.HospitalStaff;
+package HospitalProject.Controller.Domain.Doctor;
 
 public class DoctorNotFoundException extends Throwable {
     public DoctorNotFoundException(String message) {

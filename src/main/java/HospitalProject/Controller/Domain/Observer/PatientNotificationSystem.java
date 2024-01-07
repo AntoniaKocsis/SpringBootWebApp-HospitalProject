@@ -1,7 +1,7 @@
 package HospitalProject.Controller.Domain.Observer;
 
 import HospitalProject.Controller.Domain.HospitalServices.Appointments.Appointment;
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
+import HospitalProject.Controller.Domain.Patient.Patient;
 import javax.persistence.*;
 
 import java.util.ArrayList;

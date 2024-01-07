@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -28,6 +29,22 @@ public class MedicationController {
         model.addAttribute("pageTitle", "Add New Medication");
         return "medication_form";
     }
+
+    @GetMapping("/medications/filtered_search")
+    public String showChooseTypeForm(Model model) {
+        model.addAttribute("pageTitle", "Search Medication By Name");
+        return "filtered_search";
+    }
+
+
+
+    @GetMapping("/medications/filtered")
+    public String showFilteredSearch(@RequestParam String filter,Model model) {
+        List<Medication> listMedications = service.filteredSearch(filter);
+        model.addAttribute("listMedications", listMedications);
+        return "medications_filtered";
+    }
+
 
     @PostMapping("/medications/save")
     public String saveUser(Medication medication, RedirectAttributes ra) {

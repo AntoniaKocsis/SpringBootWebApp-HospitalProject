@@ -18,7 +18,7 @@ public class HospitalRoomController {
     @Autowired private HospitalRoomFactory hospitalRoomFactory;
 
     @GetMapping("/hospitalRooms")
-    public String showUserList(Model model) {
+    public String showList(Model model) {
         List<HospitalRoom> listHospitalRooms = service.listAll();
         model.addAttribute("listHospitalRooms", listHospitalRooms);
 

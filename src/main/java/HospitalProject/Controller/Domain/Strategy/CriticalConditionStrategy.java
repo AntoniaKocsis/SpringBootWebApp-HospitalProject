@@ -1,8 +1,8 @@
 package HospitalProject.Controller.Domain.Strategy;
 
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.Interfaces.PatientHandlingStrategy;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
+import HospitalProject.Controller.Domain.Patient.Patient;
+import HospitalProject.Controller.Domain.Interfaces.StrategyPattern.PatientHandlingStrategy;
 
 public class CriticalConditionStrategy implements PatientHandlingStrategy {
     @Override

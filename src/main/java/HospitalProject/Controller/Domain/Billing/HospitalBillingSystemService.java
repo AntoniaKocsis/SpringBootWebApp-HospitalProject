@@ -1,8 +1,8 @@
 package HospitalProject.Controller.Domain.Billing;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientNotFoundException;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientService;
+import HospitalProject.Controller.Domain.Patient.Patient;
+import HospitalProject.Controller.Domain.Patient.PatientNotFoundException;
+import HospitalProject.Controller.Domain.Patient.PatientService;
 import HospitalProject.Controller.Domain.HospitalServices.Appointments.Appointment;
 import HospitalProject.Controller.Domain.HospitalServices.Appointments.AppointmentService;
 import HospitalProject.Controller.Domain.HospitalServices.LabTestResult.LabTestResult;

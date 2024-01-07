@@ -1,16 +1,16 @@
 package HospitalProject.Controller.Domain.Singleton;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientNotFoundException;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientService;
+import HospitalProject.Controller.Domain.Patient.Patient;
+import HospitalProject.Controller.Domain.Patient.PatientNotFoundException;
+import HospitalProject.Controller.Domain.Patient.PatientService;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.HospitalRoomService;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.NoAvailableAdmissionRoomException;
 import HospitalProject.Controller.Domain.HospitalServices.Admissions.AdmissionService;
 import HospitalProject.Controller.Domain.HospitalServices.Prescriptions.PrescriptionService;
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
-import HospitalProject.Controller.Domain.HospitalStaff.DoctorNotFoundException;
-import HospitalProject.Controller.Domain.HospitalStaff.DoctorService;
-import HospitalProject.Controller.Domain.PatientState.PatientCondition;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
+import HospitalProject.Controller.Domain.Doctor.DoctorNotFoundException;
+import HospitalProject.Controller.Domain.Doctor.DoctorService;
+import HospitalProject.Controller.Domain.PatientStateEnum.PatientCondition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

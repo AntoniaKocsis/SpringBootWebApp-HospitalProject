@@ -1,4 +1,4 @@
-package HospitalProject.Controller.Domain.Beneficiaries;
+package HospitalProject.Controller.Domain.Patient;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,8 +1,8 @@
 package HospitalProject.Controller.Domain.HospitalServices.Admissions;
 
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.AdmissionRoom;
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
+import HospitalProject.Controller.Domain.Patient.Patient;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;

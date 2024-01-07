@@ -1,4 +1,4 @@
-package HospitalProject.Controller.Domain.HospitalStaff;
+package HospitalProject.Controller.Domain.Doctor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
