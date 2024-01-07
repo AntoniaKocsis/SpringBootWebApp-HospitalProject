@@ -407,11 +407,45 @@
 ### ExaminationRoom
 #### - Attributes
 #### - Relationships
+    @Entity
+    @DiscriminatorValue("Examination")
+    public class ExaminationRoom extends HospitalRoom {
 
+    // Appointment - ExaminationRoom Relationship
+    @OneToMany(mappedBy = "examinationRoom", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Appointment> appointments;
+
+    public ExaminationRoom() {appointments = new ArrayList<>();}
+    public ExaminationRoom(int number) {
+        super(number);
+        appointments = new ArrayList<>();
+    }
+    ...
+    
+    
+    }
 ### AdmissionRoom
 #### - Attributes
-#### - Relationships
+    @Entity
+    @DiscriminatorValue("Admission")
+    public class AdmissionRoom extends HospitalRoom {
+    
+    private List<Admission> admissions;
 
+    public AdmissionRoom() {admissions = new ArrayList<>();}
+
+    public AdmissionRoom(int roomNumber) {
+        super(roomNumber);
+        this.setAvailable(true);
+        admissions = new ArrayList<>();
+    }
+    ...
+    }
+
+
+#### - Relationships
+    @OneToMany(mappedBy = "admissionRoom", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Admission> admissions;
 
 
 
