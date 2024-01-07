@@ -1,8 +1,8 @@
 package HospitalProject.Controller.Domain.HospitalServices.Prescriptions;
 
 import HospitalProject.Controller.Domain.HospitalServices.Medications.Medication;
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
+import HospitalProject.Controller.Domain.Patient.Patient;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;

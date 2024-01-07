@@ -1,11 +1,11 @@
 package HospitalProject.Controller.Domain.HospitalServices.Appointments;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientService;
+import HospitalProject.Controller.Domain.Patient.Patient;
+import HospitalProject.Controller.Domain.Patient.PatientService;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.HospitalRoom;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.HospitalRoomService;
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
-import HospitalProject.Controller.Domain.HospitalStaff.DoctorService;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
+import HospitalProject.Controller.Domain.Doctor.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

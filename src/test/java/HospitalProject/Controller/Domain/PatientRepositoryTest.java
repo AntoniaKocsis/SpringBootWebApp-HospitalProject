@@ -1,7 +1,7 @@
 package HospitalProject.Controller.Domain;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientRepository;
+import HospitalProject.Controller.Domain.Patient.Patient;
+import HospitalProject.Controller.Domain.Patient.PatientRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

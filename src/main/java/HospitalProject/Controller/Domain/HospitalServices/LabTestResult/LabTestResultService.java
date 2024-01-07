@@ -1,5 +1,5 @@
 package HospitalProject.Controller.Domain.HospitalServices.LabTestResult;
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
+import HospitalProject.Controller.Domain.Patient.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

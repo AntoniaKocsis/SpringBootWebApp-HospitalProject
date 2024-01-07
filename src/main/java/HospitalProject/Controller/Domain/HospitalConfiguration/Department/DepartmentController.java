@@ -1,7 +1,7 @@
 package HospitalProject.Controller.Domain.HospitalConfiguration.Department;
 
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
-import HospitalProject.Controller.Domain.HospitalStaff.DoctorService;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
+import HospitalProject.Controller.Domain.Doctor.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +18,7 @@ public class DepartmentController {
     @Autowired private DoctorService doctorService;
 
     @GetMapping("/departments")
-    public String showUserList(Model model) {
+    public String showList(Model model) {
         List<Department> listDepartments = service.listAll();
         model.addAttribute("listDepartments", listDepartments);
 
@@ -35,7 +35,7 @@ public class DepartmentController {
     }
 
     @PostMapping("/departments/save")
-    public String saveUser(Department department, RedirectAttributes ra) {
+    public String save(Department department, RedirectAttributes ra) {
         service.save(department);
         ra.addFlashAttribute("message", "The Department has been saved successfully.");
         return "redirect:/departments";
@@ -58,7 +58,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/delete/{id}")
-    public String deleteUser(@PathVariable("id") Integer id, RedirectAttributes ra) {
+    public String delete(@PathVariable("id") Integer id, RedirectAttributes ra) {
         try {
             service.delete(id);
             ra.addFlashAttribute("message", "The Department ID " + id + " has been deleted.");

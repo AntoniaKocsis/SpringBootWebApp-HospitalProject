@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class MedicationService {
@@ -31,6 +32,13 @@ public class MedicationService {
             throw new MedicationNotFoundException("Could not find any medication with ID " + id);
         }
         repository.deleteById(id);
+
+    }
+    public List<Medication> filteredSearch(String string){
+        List<Medication> medications = listAll();
+        return medications.stream()
+                .filter(medication -> medication.getName().contains(string))
+                .collect(Collectors.toList());
 
     }
 }

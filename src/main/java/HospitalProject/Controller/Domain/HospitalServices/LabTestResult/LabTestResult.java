@@ -1,6 +1,6 @@
 package HospitalProject.Controller.Domain.HospitalServices.LabTestResult;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
+import HospitalProject.Controller.Domain.Patient.Patient;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;

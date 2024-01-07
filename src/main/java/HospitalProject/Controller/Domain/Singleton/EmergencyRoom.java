@@ -1,24 +1,17 @@
 package HospitalProject.Controller.Domain.Singleton;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientNotFoundException;
-import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.AdmissionRoom;
+import HospitalProject.Controller.Domain.Patient.Patient;
+import HospitalProject.Controller.Domain.Patient.PatientNotFoundException;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.HospitalRoomService;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.NoAvailableAdmissionRoomException;
-import HospitalProject.Controller.Domain.HospitalServices.Admissions.Admission;
 import HospitalProject.Controller.Domain.HospitalServices.Admissions.AdmissionService;
-import HospitalProject.Controller.Domain.HospitalServices.Medications.Medication;
-import HospitalProject.Controller.Domain.HospitalServices.Prescriptions.Prescription;
 import HospitalProject.Controller.Domain.HospitalServices.Prescriptions.PrescriptionService;
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
-import HospitalProject.Controller.Domain.HospitalStaff.DoctorNotFoundException;
-import HospitalProject.Controller.Domain.Interfaces.PatientHandlingStrategy;
-import HospitalProject.Controller.Domain.PatientState.PatientCondition;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
+import HospitalProject.Controller.Domain.Interfaces.StrategyPattern.PatientHandlingStrategy;
+import HospitalProject.Controller.Domain.PatientStateEnum.PatientCondition;
 import HospitalProject.Controller.Domain.Strategy.CriticalConditionStrategy;
 import HospitalProject.Controller.Domain.Strategy.NonCriticalConditionStrategy;
-import org.springframework.stereotype.Component;
 
-import java.awt.*;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.List;

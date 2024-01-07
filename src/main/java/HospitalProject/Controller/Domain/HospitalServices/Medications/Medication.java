@@ -14,6 +14,13 @@ public class Medication {
     private int concentration;
     private String name;
 
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }, mappedBy = "medications")
+    private List<Prescription> prescriptions;
     public Medication(String name, int concentration) {
         this.name = name;
         this.concentration = concentration;
@@ -31,12 +38,6 @@ public class Medication {
 
     }
 
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }, mappedBy = "medications")
-    private List<Prescription> prescriptions;
 
     public int getConcentration() {
         return concentration;

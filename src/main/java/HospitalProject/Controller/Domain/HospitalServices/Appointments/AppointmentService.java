@@ -1,14 +1,13 @@
 package HospitalProject.Controller.Domain.HospitalServices.Appointments;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
+import HospitalProject.Controller.Domain.Patient.Patient;
 import HospitalProject.Controller.Domain.HospitalConfiguration.HospitalRoom.ExaminationRoom;
-import HospitalProject.Controller.Domain.HospitalStaff.Doctor;
+import HospitalProject.Controller.Domain.Doctor.Doctor;
 import HospitalProject.Controller.Domain.Observer.DoctorDashboard;
 import HospitalProject.Controller.Domain.Observer.PatientNotificationSystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

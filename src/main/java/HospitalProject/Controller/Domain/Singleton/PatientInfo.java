@@ -1,11 +1,10 @@
 package HospitalProject.Controller.Domain.Singleton;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.PatientState.PatientCondition;
+import HospitalProject.Controller.Domain.Patient.Patient;
+import HospitalProject.Controller.Domain.PatientStateEnum.PatientCondition;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class PatientInfo{
     private Patient patient;

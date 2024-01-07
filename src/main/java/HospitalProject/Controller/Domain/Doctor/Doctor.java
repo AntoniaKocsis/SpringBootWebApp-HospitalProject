@@ -1,4 +1,4 @@
-package HospitalProject.Controller.Domain.HospitalStaff;
+package HospitalProject.Controller.Domain.Doctor;
 
 import HospitalProject.Controller.Domain.HospitalConfiguration.Department.Department;
 import HospitalProject.Controller.Domain.HospitalServices.Admissions.Admission;

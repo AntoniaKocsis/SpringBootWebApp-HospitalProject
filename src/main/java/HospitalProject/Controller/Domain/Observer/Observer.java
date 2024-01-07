@@ -1,7 +1,7 @@
 package HospitalProject.Controller.Domain.Observer;
 
 import HospitalProject.Controller.Domain.HospitalServices.Appointments.Appointment;
-import HospitalProject.Controller.Domain.Interfaces.AppointmentObserver;
+import HospitalProject.Controller.Domain.Interfaces.ObserverPattern.AppointmentObserver;
 import javax.persistence.*;
 
 import java.util.ArrayList;

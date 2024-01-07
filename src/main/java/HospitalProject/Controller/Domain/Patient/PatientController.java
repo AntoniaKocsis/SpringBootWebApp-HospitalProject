@@ -1,4 +1,4 @@
-package HospitalProject.Controller.Domain.Beneficiaries;
+package HospitalProject.Controller.Domain.Patient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ public class PatientController {
     @Autowired private PatientService service;
 
     @GetMapping("/patients")
-    public String showUserList(Model model) {
+    public String showPatientsList(Model model) {
         List<Patient> listPatients = service.listAll();
         model.addAttribute("listPatients", listPatients);
 
@@ -30,7 +30,7 @@ public class PatientController {
     }
 
     @PostMapping("/patients/save")
-    public String saveUser(Patient patient, RedirectAttributes ra) {
+    public String savePatient(Patient patient, RedirectAttributes ra) {
         service.save(patient);
         ra.addFlashAttribute("message", "The patient has been saved successfully.");
         return "redirect:/patients";
@@ -51,7 +51,7 @@ public class PatientController {
     }
 
     @GetMapping("/patients/delete/{id}")
-    public String deleteUser(@PathVariable("id") Integer id, RedirectAttributes ra) {
+    public String deletePatient(@PathVariable("id") Integer id, RedirectAttributes ra) {
         try {
             service.delete(id);
             ra.addFlashAttribute("message", "The patient ID " + id + " has been deleted.");

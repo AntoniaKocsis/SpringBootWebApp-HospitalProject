@@ -1,4 +1,4 @@
-package HospitalProject.Controller.Domain.PatientState;
+package HospitalProject.Controller.Domain.PatientStateEnum;
 
 public enum PatientCondition {
     CRITICAL, SERIOUS, STABLE;

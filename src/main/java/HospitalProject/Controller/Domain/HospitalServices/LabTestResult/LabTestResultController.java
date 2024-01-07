@@ -1,8 +1,8 @@
 package HospitalProject.Controller.Domain.HospitalServices.LabTestResult;
 
-import HospitalProject.Controller.Domain.Beneficiaries.Patient;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientNotFoundException;
-import HospitalProject.Controller.Domain.Beneficiaries.PatientService;
+import HospitalProject.Controller.Domain.Patient.Patient;
+import HospitalProject.Controller.Domain.Patient.PatientNotFoundException;
+import HospitalProject.Controller.Domain.Patient.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

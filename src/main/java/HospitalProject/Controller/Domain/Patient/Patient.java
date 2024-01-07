@@ -1,4 +1,4 @@
-package HospitalProject.Controller.Domain.Beneficiaries;
+package HospitalProject.Controller.Domain.Patient;
 
 import HospitalProject.Controller.Domain.HospitalServices.Admissions.Admission;
 import HospitalProject.Controller.Domain.HospitalServices.Appointments.Appointment;
@@ -16,6 +16,8 @@ import java.util.List;
 @Entity
 @Table(name = "Patients")
 public class Patient {
+
+    /** Attributes **/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -41,7 +43,7 @@ public class Patient {
     @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<LabTestResult> labTestResults;
 
-
+    /** Constructors **/
     public Patient() {
         appointments = new ArrayList<>();
         admissions = new ArrayList<>();
@@ -60,6 +62,8 @@ public class Patient {
         admissions = new ArrayList<>();
         patientNotificationSystems = new ArrayList<>();
     }
+
+    /** Getters and Setters **/
 
     public Integer getId() {
         return id;
