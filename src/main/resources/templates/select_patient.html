@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Patient</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Adjust the width as needed */
+            text-align: center;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        select {
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<form action="/hospitalBillingSystems/patient_tests" method="get">
+    <h2 th:text="${pageTitle}">Choose Patient</h2>
+
+    <div class="form-group">
+        <label for="patientId">Select Patient:</label>
+        <select id="patientId" name="patientId" class="form-control" required>
+            <th:block th:each="pat: ${patients}">
+                <option th:text="'ID: '+ ${pat.id}+' | First Name: '+${pat.firstName} + ' | Last Name: '+ ${pat.lastName} " th:value="${pat.id}"></option>
+            </th:block>
+        </select>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
