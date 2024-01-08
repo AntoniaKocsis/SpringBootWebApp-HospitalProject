@@ -520,20 +520,20 @@
 - The side-navigation provides a pathway to different webpages corresponding to the listed elements.
 - The "Book an Appointment" section redirects you to the new appointment form.
 
-#### New Appointment Form:
+### New Appointment Form:
 ![appointment_form.png](appointment_form.png)
 
 - Patients, doctors, and examination rooms can all be chosen from existing lists within the system.
 - For the date section both the exact date and the desired time for the appointment must be provided.
 - The save button stores the data in the database and then redirects to the appointments webpage, while the cancel button simply redirects without saving.
 
-#### Appointments:
+### Appointments:
 ![appointments.png](appointments.png)
 
 - The webpage displays the existing appointments along with their attributes.
 - The side-navigation provides access to the Home Page and to the New Appointment form.
 
-#### Emergency Room:
+### Emergency Room:
 ![EmergencyRoom.png](EmergencyRoom.png)
 
 - Clicking on the "Emergency Room" element from the Home Page side-navigation brings you to this page.
@@ -541,44 +541,44 @@
 - The "Handle Next Patient" button removes the first patient from the waiting list, having paired them with an On Call doctor.
 - The side-navigation gives access to the Add New Patient form, as well as to the On Call Doctors webpage.
 
-#### Add New Patient:
+### Add New Patient:
 ![EmergencyPatient.png](EmergencyPatient.png)
 - The form requires basic information about the patient, as well as their state: critical, serious or stable.
 
-#### On Call Doctors:
+### On Call Doctors:
 ![OnCall.png](OnCall.png)
 - The On Call Doctors can be viewed clicking the respective element from the Emergency Room side-navigation.
 - The doctors are displayed along with their information, having the option to set them off call.
 - The "Add New Doctor" form is accessible through the side-navigation of this webpage, allowing you to select a doctor from an existing list when assigning on-call duties.
 
-#### Hospital Rooms:
+### Hospital Rooms:
 ![HospitalRoom.png](HospitalRoom.png)
 - The Hospital Room page accessed from the Home Page displays the hospital rooms and their types.
 - The 'New Hospital Room' form mandates specifying both the type of room being registered and its availability.
 
-#### Hospital Billing System:
+### Hospital Billing System:
 ![Billing.png](Billing.png)
 - The "Hospital Billing System" element from the Home Page leads to this webpage containing all bills from lab tests.
 - The side-navigation provides links to the "Appointment Bills" page and also allows access to filtered search options for bills by patient, including both test bills and appointment bills.
 
-#### Search Test Bills for Patient:
+### Search Test Bills for Patient:
 ![img_2.png](img_2.png)
 - This is the "Search Test Bills for Patient" option.
 - Choose a patient from the available list, with the patient's ID and full name presented for reference.
 
-#### Patient Lab Test Bills:
+### Patient Lab Test Bills:
 ![img_3.png](img_3.png)
 - After clicking "Submit" on the previous page you are redirected to another webpage where only the tests for the patient you searched for are displayed
 - The same goes for the "Search Appointment Bills for Patient" element.
 
-#### Medication:
+### Medication:
 ![Medication.png](Medication.png)
 
 - The medication page displays the name of the medicine and its concentration.
 - To add new medication you can click on the "Add New Medication" element in the side-navigation. The form requires just the information displayed on the page: name and concentration.
 - The search by name is also accessible through the side navigation. 
 
-#### Search Medication By Name:
+### Search Medication By Name:
 ![img_4.png](img_4.png)
 
 - Here you can enter the full name of a medication or just a letter from its name.
@@ -587,13 +587,13 @@
 
 - After clicking the 'Search' button, you will be redirected to a page displaying medications that match the entered letters.
 
-#### Prescriptions:
+### Prescriptions:
 ![Prescription.png](Prescription.png)
 
 - The Prescription page provides information about the medication, specifying the prescribing doctor, the patient, and the date of the prescription.
 - The names of the medications are hidden unless hovered upon by the cursor
 
-#### New Perscription:
+### New Perscription:
 ![img_6.png](img_6.png)
 
 - When adding a new perscription to the system, you must specify the patient and doctors as well as medication from their respective existing lists.
