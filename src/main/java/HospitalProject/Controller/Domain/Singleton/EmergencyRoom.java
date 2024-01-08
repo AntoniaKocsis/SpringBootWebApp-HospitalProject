@@ -20,11 +20,13 @@ import java.util.List;
 public class EmergencyRoom {
 
     private PatientHandlingStrategy strategy;
+    private static int count = 0;
     private static EmergencyRoom instance;
     private List<Doctor> doctorsOnCall;
     private List<PatientInfo> waitingList;
 
     private EmergencyRoom() {
+        count++;
         waitingList = new ArrayList<>();
         doctorsOnCall = new ArrayList<>();
     }
@@ -34,6 +36,7 @@ public class EmergencyRoom {
         }
         return instance;
     }
+
     public void setStrategy(PatientHandlingStrategy strategy) {
         this.strategy = strategy;
     }
@@ -120,4 +123,11 @@ public class EmergencyRoom {
 
     }
 
+    public static int getCount() {
+        return count;
+    }
+
+    public PatientHandlingStrategy getStrategy() {
+        return strategy;
+    }
 }

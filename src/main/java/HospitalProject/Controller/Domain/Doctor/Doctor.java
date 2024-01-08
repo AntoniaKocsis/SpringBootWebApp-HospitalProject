@@ -47,6 +47,7 @@ public class Doctor {
         appointments = new ArrayList<>();
         admissions = new ArrayList<>();
         onCall = false;
+        doctorDashboards = new ArrayList<>();
     }
 
     public Doctor(String firstName, String lastName, LocalDateTime birthDate, String contact, String address) {

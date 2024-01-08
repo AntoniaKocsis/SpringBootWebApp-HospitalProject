@@ -1,5 +1,6 @@
 package HospitalProject.Controller.Domain.Singleton;
 
+import HospitalProject.Controller.Domain.Interfaces.StrategyPattern.PatientHandlingStrategy;
 import HospitalProject.Controller.Domain.Patient.Patient;
 import HospitalProject.Controller.Domain.Patient.PatientNotFoundException;
 import HospitalProject.Controller.Domain.Patient.PatientService;
@@ -96,6 +97,9 @@ public class EmergencyRoomService {
     }
     public boolean handleNextPatient() throws NoAvailableAdmissionRoomException {
         return emergencyRoom.handleNextPatient(admissionService,prescriptionService,hospitalRoomService);
+    }
+    public PatientHandlingStrategy getStrategy(){
+        return emergencyRoom.getStrategy();
     }
 
 }
