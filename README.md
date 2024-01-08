@@ -593,10 +593,10 @@
 - The Prescription page provides information about the medication, specifying the prescribing doctor, the patient, and the date of the prescription.
 - The names of the medications are hidden unless hovered upon by the cursor
 
-### New Perscription:
+### New Prescription:
 ![img_6.png](img_6.png)
 
-- When adding a new perscription to the system, you must specify the patient and doctors as well as medication from their respective existing lists.
+- When adding a new prescription to the system, you must specify the patient and doctors as well as medication from their respective existing lists.
 
 
 
