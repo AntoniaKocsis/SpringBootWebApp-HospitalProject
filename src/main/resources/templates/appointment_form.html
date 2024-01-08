@@ -10,7 +10,25 @@
             margin: 0;
             padding: 0;
         }
+        .sidenav {
+            height: 100%;
+            width: 20%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #002e4d;
+            overflow-x: hidden;
+            padding-top: 2.5%;
+            display: flex;
+            flex-direction: column;
+        }
 
+        .sidenav img {
+            width: 80px; /* Adjust the width of the image */
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
 
         .upperBox {
             height: 70px;
@@ -18,6 +36,7 @@
         }
 
         .main {
+            margin-left: 20%;
             padding: 2% 1%; /* Adjusted padding to move content even lower */
             overflow-y: scroll; /* Add scroll to the main content */
             height: 100vh; /* Set the height to 100% of the viewport height */
@@ -25,7 +44,7 @@
         }
 
         .main h2 {
-            width: 40%; /* Set width for main text box */
+            width: 50%; /* Set width for main text box */
             font-family: "Times New Roman", sans-serif;
             font-size: 30px;
             color: #004d99;
@@ -76,20 +95,23 @@
     </style>
 </head>
 <body>
+<div class="sidenav">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
+</div>
 <div class="upperBox"></div>
 <div class="main">
     <div class="container-fluid">
         <div class="text-center"><h2>Add New Appointment</h2></div>
 
     <form class="form-container" th:action="@{/appointments/save}" method="post" th:object="${appointment}"
-          style="max-width: 50%; margin: 5% auto;">
+          style="max-width: 65%; margin: 5% auto;">
         <input type="hidden" th:field="*{id}">
         <div class="border border-secondary rounded p-3">
             <!-- Patient selection -->
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Patient:</label>
                 <div class="col-sm-8">
-                    <select th:field="*{patient}" style="width: 80%; height: 40px;" class="form-control" required>
+                    <select th:field="*{patient}" style="width: 90%; height: 40px;" class="form-control" required>
                         <th:block th:each="pat:${patients}">
                             <option th:text="${pat.firstName}" th:value="${pat.id}"></option>
                         </th:block>
@@ -101,7 +123,7 @@
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Doctor:</label>
                 <div class="col-sm-8">
-                    <select th:field="*{doctor}" style="width: 80%; height: 40px;" class="form-control" required>
+                    <select th:field="*{doctor}" style="width: 90%; height: 40px;" class="form-control" required>
                         <th:block th:each="doc:${doctors}">
                             <option th:text="${doc.firstName}" th:value="${doc.id}"></option>
                         </th:block>
@@ -113,7 +135,7 @@
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Examination Room:</label>
                 <div class="col-sm-8">
-                    <select th:field="*{examinationRoom}" style="width: 80%; height: 40px;" class="form-control" required>
+                    <select th:field="*{examinationRoom}" style="width: 90%; height: 40px;" class="form-control" required>
                         <th:block th:each="room:${rooms}">
                             <option th:text="${room.roomNumber}" th:value="${room.id}"></option>
                         </th:block>

@@ -10,14 +10,14 @@
 
         .sidenav {
             height: 100%;
-            width: 250px;
+            width: 20%;
             position: fixed;
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: #111;
+            background-color: #002e4d;
             overflow-x: hidden;
-            padding-top: 20px;
+            padding-top: 2.5%;
             display: flex;
             flex-direction: column;
         }
@@ -32,25 +32,48 @@
             padding: 20px 20px 20px 20px;
             text-decoration: none;
             font-size: 18px;
-            color: #818181;
+            color: #e6f7ff;
             display: block;
         }
 
         .sidenav a:hover {
-            color: #f1f1f1;
+            color: #007ab3;
+        }
+        .upperBox {
+            margin-left: 240px; /* Same as the width of the sidenav */
+            height: 70px;
+            background-color: #000000;
+        }
+
+        .backgroundBox {
+            height: 250px; /* Set the height of the title box */
+            background-image: url('https://th.bing.com/th/id/R.f74458062bff2bfc64da0e25be70e8d5?rik=UtlIRYZKDKgOgw&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fe%2ff%2f7%2f7182.jpg&ehk=4EnNR1LQ6WDExBsW%2fZzOEgcrQ%2fc6CtT2DwuAMm6u7MY%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover; /* Cover the entire box with the background image */
+            background-position: center; /* Center the background image */
+            color: #111111; /* Set the text color */
+            display: flex;
+
         }
 
         .main {
-            margin-left: 260px; /* Same as the width of the sidenav */
-            padding: 20px 10px; /* Adjusted padding to move content even lower */
+            margin-left: 21%; /* Same as the width of the sidenav */
+            padding: 2% 1%; /* Adjusted padding to move content even lower */
             overflow-y: scroll; /* Add scroll to the main content */
             height: 100vh; /* Set the height to 100% of the viewport height */
         }
 
         .main h2 {
-            font-size: 28px; /* Adjusted font size */
-            font-weight: bold; /* Set the header to bold */
+            width: 30%; /* Set width for main text box */
+            font-family: "Times New Roman", sans-serif;
+            font-size: 30px;
+            color: #004d99;
+            margin-right: 10%;
         }
+        .main a.h4 {
+            font-size: 16px; /* Set the font size for the h4 class */
+            padding: 5px 5px; /* Set padding for the buttons */
+        }
+
     </style>
 
     <meta charset="UTF-8">
@@ -64,9 +87,9 @@
     <a class="h4" th:href="@{/medications}">Manage Medications</a>
     <a class="h4" th:href="@{/medications/new}">Add New Medication</a>
     <a class="h4" th:href="@{/medications/filtered_search}">Filtered Search</a>
-    <!-- Add additional sidebar links as needed -->
 </div>
-
+<div class="upperBox"></div>
+<div class="backgroundBox"></div>
 <div class="main">
     <div class="container-fluid text-center">
         <div><h2>Manage Medications</h2></div>

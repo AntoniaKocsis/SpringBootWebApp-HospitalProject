@@ -16,7 +16,28 @@
       background-color: #000000;
     }
 
+    .sidenav {
+      height: 100%;
+      width: 20%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #002e4d;
+      overflow-x: hidden;
+      padding-top: 2.5%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidenav img {
+      width: 80px; /* Adjust the width of the image */
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
     .main {
+      margin-left: 20%;
       padding: 2% 1%; /* Adjusted padding to move content even lower */
       overflow-y: scroll; /* Add scroll to the main content */
       height: 100vh; /* Set the height to 100% of the viewport height */
@@ -24,7 +45,7 @@
     }
 
     .main h2 {
-      width: 30%; /* Set width for main text box */
+      width: 50%; /* Set width for main text box */
       font-family: "Times New Roman", sans-serif;
       font-size: 30px;
       color: #004d99;
@@ -76,43 +97,46 @@
 </head>
 
 <body>
+<div class="sidenav">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
+</div>
 <div class="upperBox"></div>
 <div class="main">
   <div class="container-fluid text-center">
     <div><h2>Add New Patient</h2></div>
 
   <form class="form-container" th:action="@{/patients/save}" method="post" th:object="${patient}"
-        style="max-width: 50%; margin: 5% auto;">
+        style="max-width: 65%; margin: 5% auto;">
     <input type="hidden" th:field="*{id}">
     <div class="border border-secondary rounded p-3">
       <div class="form-group row">
         <label class="col-sm-4 col-form-label">First Name:</label>
         <div class="col-sm-8">
-          <input type="text" th:field="*{firstName}" style="width: 80%; height: 40px"; class="form-control" required minlength="2" maxlength="45" />
+          <input type="text" th:field="*{firstName}" style="width: 90%; height: 40px"; class="form-control" required minlength="2" maxlength="45" />
         </div>
       </div>
       <div class="form-group row">
         <label class="col-sm-4 col-form-label">Last Name:</label>
         <div class="col-sm-8">
-          <input type="text" th:field="*{lastName}" style="width: 80%; height: 40px"; class="form-control" required minlength="2" maxlength="45" />
+          <input type="text" th:field="*{lastName}" style="width: 90%; height: 40px"; class="form-control" required minlength="2" maxlength="45" />
         </div>
       </div>
       <div class="form-group row">
         <label class="col-sm-4 col-form-label">Birth Date:</label>
         <div class="col-sm-8">
-          <input type="datetime-local" th:field="*{birthDate}" style="width: 80%; height: 40px"; class="form-control" required/>
+          <input type="datetime-local" th:field="*{birthDate}" style="width: 90%; height: 40px"; class="form-control" required/>
         </div>
       </div>
       <div class="form-group row">
         <label class="col-sm-4 col-form-label">Contact:</label>
         <div class="col-sm-8">
-          <input type="text" th:field="*{contact}" style="width: 80%; height: 40px"; class="form-control" required minlength="5" maxlength="15" />
+          <input type="text" th:field="*{contact}" style="width: 90%; height: 40px"; class="form-control" required minlength="5" maxlength="15" />
         </div>
       </div>
       <div class="form-group row">
         <label class="col-sm-4 col-form-label">Address:</label>
         <div class="col-sm-8">
-          <input type="text" th:field="*{address}" style="width: 80%; height: 40px"; class="form-control" required minlength="5" maxlength="15" />
+          <input type="text" th:field="*{address}" style="width: 90%; height: 40px"; class="form-control" required minlength="5" maxlength="15" />
         </div>
       </div>
       <div class="text-center">

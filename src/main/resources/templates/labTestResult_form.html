@@ -11,6 +11,11 @@
             padding: 0;
         }
 
+        .upperBox {
+            height: 70px;
+            background-color: #000000;
+        }
+
         .sidenav {
             height: 100%;
             width: 20%;
@@ -31,34 +36,16 @@
             margin-bottom: 10px;
         }
 
-        .sidenav a {
-            padding: 20px 20px 20px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #e6f7ff;
-            display: block;
-        }
-
-        .sidenav a:hover {
-            color: #007ab3;
-        }
-
-        .upperBox {
-            margin-left: 240px; /* Same as the width of the sidenav */
-            height: 70px;
-            background-color: #000000;
-        }
-
         .main {
-            margin-left: 21%; /* Same as the width of the sidenav */
-            padding: 2% 1%; /* Adjusted padding to move content even lower */
+            margin-left: 20%;
+            padding: 2% 1%;
             overflow-y: scroll; /* Add scroll to the main content */
             height: 100vh; /* Set the height to 100% of the viewport height */
 
         }
 
         .main h2 {
-            width: 40%; /* Set width for main text box */
+            width: 50%; /* Set width for main text box */
             font-family: "Times New Roman", sans-serif;
             font-size: 30px;
             color: #004d99;
@@ -111,28 +98,21 @@
 <body>
 <div class="sidenav">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
-    <a class="h4" th:href="@{index/}">Home Page</a>
-    <a class="h4" th:href="@{/patients}">Manage labTestResults</a>
-    <a class="h4" th:href="@{/patients/new}">Add New labTestResult</a>
-
 </div>
 <div class="upperBox"></div>
 <div class="main">
-    <div class="container-fluid">
-        <div class="text-center"><h2>Add New labTestResult</h2></div>
+    <div class="container-fluid text-center">
+        <h2>Add New labTestResult</h2></div>
 
         <form class="form-container" th:action="@{/labTestResults/save}" method="post"
-              style="max-width: 30%; margin: 5% auto;">
-
+              style="max-width: 65%; margin: 5% auto;">
             <div class="border border-secondary rounded p-3">
-
                 <div class="form-group row">
-                    <label for="name">Name:</label>
+                    <label class="col-sm-4 col-form-label" for="name">Name:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="name" id="name" required/>
+                        <input type="text" style="width: 90%; height: 40px"; class="form-control" name="name" id="name" required/>
                     </div>
                 </div>
-                <!-- Patient selection -->
                 <div class="form-group">
                     <label for="patient">Select Patient:</label>
                     <select class="form-control" id="patient" name="patient" required>
@@ -142,18 +122,16 @@
                         </th:block>
                     </select>
                 </div>
-
                 <div class="form-group row">
-                    <label for="result">Result:</label>
+                    <label class="col-sm-4 col-form-label" for="result">Result:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="result" id="result" required/>
+                        <input type="text" style="width: 90%; height: 40px"; class="form-control" name="result" id="result" required/>
                     </div>
                 </div>
-                <!-- Date input -->
                 <div class="form-group row">
-                    <label for="date">Date:</label>
+                    <label class="col-sm-4 col-form-label" for="date">Date:</label>
                     <div class="col-sm-8">
-                        <input type="datetime-local" class="form-control" name="date" id="date" required/>
+                        <input type="datetime-local" style="width: 90%; height: 40px"; class="form-control" name="date" id="date" required/>
                     </div>
                 </div>
 

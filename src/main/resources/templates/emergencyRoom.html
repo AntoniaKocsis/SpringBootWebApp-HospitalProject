@@ -153,8 +153,7 @@
                         <td>[[${instance.key.address}]]</td>
                         <td>[[${instance.value}]]</td>
                         <td>
-                            <a class="h4 mr-3" th:href="@{'/emergencyRoom/edit/' + ${instance.key.id}}">Edit</a>
-                            <a class="h4" th:href="@{'/emergencyRoom/delete/' + ${instance.key.id}}">Delete</a>
+                            <a class="h4" style="font-size: 14px; padding: 5px 10px;" th:href="@{'/emergencyRoom/delete/' + ${instance.key.id}}">Delete</a>
                         </td>
                     </tr>
                 </th:block>

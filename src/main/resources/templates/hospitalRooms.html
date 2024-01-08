@@ -65,7 +65,7 @@
         }
 
         .main h2 {
-            width: 30%; /* Set width for main text box */
+            width: 50%; /* Set width for main text box */
             font-family: "Times New Roman", sans-serif;
             font-size: 30px;
             color: #004d99;
@@ -142,7 +142,7 @@
                         <td th:text="${hospitalRoom.getClass().getSimpleName()}"></td>
                         <td>[[${hospitalRoom.available}]]</td>
                         <td>
-                            <a class="h4" th:href="@{'/hospitalRooms/delete/' + ${hospitalRoom.id}}">Delete</a>
+                            <a class="h4" style="font-size: 14px; padding: 5px 10px;" th:href="@{'/hospitalRooms/delete/' + ${hospitalRoom.id}}">Delete</a>
                         </td>
                     </tr>
                 </th:block>

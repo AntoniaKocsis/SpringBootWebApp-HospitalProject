@@ -50,7 +50,7 @@
         }
 
         .main {
-            margin-left: 21%; /* Same as the width of the sidenav */
+            margin-left: 20%; /* Same as the width of the sidenav */
             padding: 2% 1%; /* Adjusted padding to move content even lower */
             overflow-y: scroll; /* Add scroll to the main content */
             height: 100vh; /* Set the height to 100% of the viewport height */
@@ -58,7 +58,7 @@
         }
 
         .main h2 {
-            width: 40%; /* Set width for main text box */
+            width: 50%; /* Set width for main text box */
             font-family: "Times New Roman", sans-serif;
             font-size: 30px;
             color: #004d99;
@@ -111,10 +111,6 @@
 <body>
 <div class="sidenav">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DDGgfDY3xH9zwOYOBKlSTdk8Wm6eGNsMfw&usqp=CAU" alt="Profile Image">
-    <a class="h4" th:href="@{index}">Home Page</a>
-    <a class="h4" th:href="@{/departments}">Manage Departments</a>
-    <a class="h4" th:href="@{/departments/new}">Add New Department</a>
-
 </div>
 <div class="upperBox"></div>
 <div class="main">
@@ -122,7 +118,7 @@
         <div class="text-center"><h2> Edit Department</h2></div>
 
         <form class="form-container" th:action="@{/departments/save}" method="post" th:object="${department}"
-              style="max-width: 30%; margin: 5% auto;">
+              style="max-width: 65%; margin: 5% auto;">
             <input type="hidden" th:field="*{id}">
             <input type="hidden" th:field="*{name}" th:value="${department.name}">
             <div class="border border-secondary rounded p-3">
@@ -130,13 +126,13 @@
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Name:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" th:value="${department.name}" readonly/>
+                        <input type="text" style="width: 90%; height: 40px"; class="form-control" th:value="${department.name}" readonly/>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">doctors:</label>
                     <div class="col-sm-8">
-                        <select multiple="multiple" th:field="*{doctors}" class="form-control" required>
+                        <select multiple="multiple" style="width: 90%; height: 40px"; th:field="*{doctors}" class="form-control" required>
                             <th:block th:each="doctor:${doctorList}">
                                 <option th:text="${doctor.id +' '+doctor.firstName + ' ' + doctor.lastName}" th:value="${doctor.id}"></option>
                             </th:block>
